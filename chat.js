@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     chatbotHTML += `
             <div id="chatbotPhone">
                 <span id="phoneText">ご相談はこちらから: </span>
-                <a href="tel:05031885207" id="phoneLink">050-3188-5207</a>
+                <a href="tel:0462269980" id="phoneLink">046-226-9980</a>
             </div>
             <div id="chatbotInput">
                 <input type="text" id="messageInput" placeholder="メッセージを入力...">
