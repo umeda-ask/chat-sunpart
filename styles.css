@@ -1,506 +1,270 @@
 #chatbot {
-    position: fixed !important;
-    bottom: 5% !important;
-    right: 2% !important;
-    width: 30% !important;
-    height: 92% !important;
-    border: 1px solid #ccc !important;
-    background: #ffffff !important;
-    display: none !important;
-    flex-direction: column !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 10px !important;
-    opacity: 0 !important;
-    transform: scale(0) !important;
-    transform-origin: bottom right !important;
-    transition: opacity 0.1s ease, transform 0.1s ease !important;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    width: 30%;
+    height: 92%;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    z-index: 99999;
 }
 
 #chatbot.show {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    display: flex !important;
-    z-index: 99999
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
 }
 
 #chatbotHeader {
-    background: #0078d4 !important;
-    color: white !important;
-    padding: 3% !important;
-    cursor: pointer !important;
-    text-align: center !important;
-    border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    background: #0078d4;
+    color: white;
+    padding: 3%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #chatbotHeader span {
-    font-size: 2vw !important;
-}
-
-#phoneText{
-    color: #000 !important;
+    font-size: 2vw;
 }
 
 #personIcon {
-    width: 3vw !important; /* アイコンの大きさを調整 */
-    height: 3vw !important; /* アイコンの大きさを調整 */
-    margin-right: 1vw !important; /* アイコンとテキストの間にスペースを追加 */
-}
-
-#chatbotPhone {
-    background: #D5E1ED !important; /* 背景色を設定 */
-    padding: 1% !important; /* 余白を設定 */
-    text-align: center !important; /* テキストを中央揃え */
-    font-size: 1.2vw !important; /* フォントサイズを小さく設定 */
-    border-top: 1px solid #ccc !important; /* 上部に境界線を追加 */
-    border-bottom: 1px solid #ccc !important; /* 下部に境界線を追加 */
-}
-
-#phoneLink {
-    color: #0078d4 !important; /* リンクの色を設定 */
-    text-decoration: none !important; /* リンクの下線を消す */
-    font-size: 1.5vw !important; /* リンクのフォントサイズを大きく設定 */
-}
-
-#phoneLink:hover {
-    text-decoration: underline !important; /* ホバー時に下線を表示 */
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1vw;
 }
 
 #chatbotMessages {
-    flex: 1 !important;
-    padding: 3% !important;
-    overflow-y: scroll !important;
-    background-color: #f0f0f0 !important; /* Background similar to ASKUL's message area */
+    flex: 1;
+    padding: 3%;
+    overflow-y: auto;
+    background-color: #f0f0f0;
 }
 
 #chatbotMessages ul {
-    list-style-type: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #chatbotMessages li {
-    margin-bottom: 3% !important;
-    display: flex !important;
+    margin-bottom: 3%;
+    display: flex;
 }
 
 .left {
-    justify-content: flex-start !important;
+    justify-content: flex-start;
 }
 
 .right {
-    justify-content: flex-end !important;
+    justify-content: flex-end;
 }
 
 .chatbot-left, .chatbot-right {
-    max-width: 70% !important;
-    padding: 3% !important;
-    border-radius: 10px !important;
-    position: relative !important;
-    word-wrap: break-word !important;
-    color: #000 !important; /* 吹き出しの文字色を黒に設定 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* 影を追加 */
+    max-width: 70%;
+    padding: 3%;
+    border-radius: 10px;
+    position: relative;
+    word-wrap: break-word;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .chatbot-left {
-    background: #ffffff !important;
-    border: 1px solid #ccc !important;
-    font-size: 1.5vw !important;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5vw;
 }
 
 .chatbot-left::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 10px !important;
-    left: -20px !important;
-    width: 0 !important;
-    height: 0 !important;
-    border: 10px solid transparent !important;
-    border-right-color: #ffffff !important;
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #fff;
 }
 
 .chatbot-right {
-    background: #dcf8c6 !important;
+    background: #dcf8c6;
+    font-size: 1.5vw;
 }
 
 .chatbot-right::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 10px !important;
-    right: -20px !important;
-    width: 0 !important;
-    height: 0 !important;
-    border: 10px solid transparent !important;
-    border-left-color: #dcf8c6 !important;
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #dcf8c6;
 }
 
 #chatbotInput {
-    display: flex !important;
-    padding: 3% !important;
-    border-top: 1px solid #ccc !important;
-    background: #ffffff !important;
-    border-bottom-left-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
+    display: flex;
+    padding: 3%;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #chatbotInput input {
-    flex: 1 !important;
-    padding: 3% !important;
-    border: 1px solid #ccc !important;
-    border-radius: 5px !important;
-    margin-right: 1% !important;
+    flex: 1;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 1%;
+    font-size: 1.2vw;
 }
 
 #sendMessage {
-    padding: 3% !important;
-    background: #0078d4 !important;
-    color: white !important;
-    border: none !important;
-    cursor: pointer !important;
-    border-radius: 5px !important;
-    transition: background-color 0.3s !important;
+    padding: 3%;
+    background: #0078d4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.2vw;
 }
 
 #sendMessage:disabled {
-    background: #cccccc !important;
-    cursor: not-allowed !important;
+    background: #ccc;
+    cursor: not-allowed;
 }
 
 #openChatbot {
-    position: fixed !important;
-    bottom: 2% !important;
-    right: 2% !important;
-    width: 6vw !important; /* Set width based on viewport width */
-    height: 6vw !important; /* Set height equal to width to keep it square */
-    background: #0078d4 !important;
-    border: none !important;
-    cursor: pointer !important;
-    border-radius: 50% !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important; /* 影を強調 */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    transition: transform 0.3s ease, opacity 0.1s ease !important; /* アイコンの拡大 */
-    z-index: 99999 !important;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 6vw;
+    height: 6vw;
+    background: #0078d4;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.1s ease;
+    z-index: 99999;
 }
 
 #openChatbot.hide {
-    transform: scale(0) !important;
-    opacity: 0 !important;
+    transform: scale(0);
+    opacity: 0;
 }
 
 #openChatbot img {
-    width: 50% !important; /* Adjust based on parent size */
-    height: 50% !important; /* Adjust based on parent size */
+    width: 50%;
+    height: 50%;
 }
 
 .choice-button {
-    background: #0078d4 !important;
-    color: white !important;
-    border: none !important;
-    padding: 2% !important;
-    margin: 1% 0 !important;
-    cursor: pointer !important;
-    border-radius: 5px !important;
-    display: block !important;
-    width: 16vw !important; /* 固定幅を設定 */
-    transition: background-color 0.3s !important;
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 2%;
+    margin: 1% 0;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 16vw;
+    font-size: 1.4vw;
+    transition: background-color 0.3s;
 }
 
-
 .choice-button:hover {
-    background: #005bb5 !important;
+    background: #005bb5;
 }
 
 .choice-button-disabled {
-    background: #cccccc !important;
-    cursor: not-allowed !important;
-}
-
-@media (max-width: 768px) {
-    .choice-button {
-        width: 45vw !important; /* スマホの場合の幅を設定 */
-        height: 40px !important;
-    }
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1 !important; }
-    50% { opacity: 0 !important; }
-}
-
-.loading {
-    display: flex !important;
-    align-items: center !important;
-}
-
-.loading span {
-    display: inline-block !important;
-    margin: 0 2px !important;
-    width: 0.8vw !important;
-    height: 0.8vw !important;
-    background-color: #000 !important;
-    border-radius: 50% !important;
-    animation: blink 1.4s infinite both !important;
-}
-
-.loading span:nth-child(1) {
-    animation-delay: 0.2s !important;
-}
-
-.loading span:nth-child(2) {
-    animation-delay: 0.4s !important;
-}
-
-.loading span:nth-child(3) {
-    animation-delay: 0.6s !important;
-}
-
-@media (max-width: 768px) {
-    .loading span {
-        width: 2.5vw !important;
-        height: 2.5vw !important;
-    }
+    background: #ccc;
+    cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
     #chatbot {
-        width: 92% !important;
-        height: 92% !important;
+        width: 92%;
+        height: 92%;
     }
-
     #openChatbot {
-        width: 17vw !important; /* Increase width for mobile devices */
-        height: 17vw !important; /* Increase height for mobile devices */
+        width: 17vw;
+        height: 17vw;
+        bottom: 20%;
+        right: 5%;
     }
-
-    #openChatbot img {
-        width: 50% !important; /* Adjust based on parent size */
-        height: 50% !important; /* Adjust based on parent size */
-    }
-
     #chatbotHeader span {
-        font-size: 6vw !important;
+        font-size: 6vw;
     }
-}
-.choice-button {
-    font-size: 1.4vw !important; /* ボタンの文字を少し大きく */
-}
-@media (max-width: 768px) {
     .choice-button {
-        font-size: 4vw !important; /* スマホ用にさらに大きく */
+        width: 45vw;
+        height: 40px;
+        font-size: 4vw;
+    }
+    #chatbotInput input {
+        font-size: 4vw;
+    }
+    #sendMessage {
+        font-size: 4vw;
+    }
+    .chatbot-left, .chatbot-right {
+        font-size: 4vw;
     }
 }
 
-#openChatbot {
-    ...
-    position: relative !important;
+/* ローディングアニメーション */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-#openChatbotTooltip {
-    display: none !important;
-    position: absolute !important;
-    top: -3vw !important; /* Adjust tooltip position based on viewport size */
-    left: -12% !important;
-    transform: translateX(-50%) !important;
-    background: #333 !important;
-    color: white !important;
-    padding: 0.5vw 1vw !important;
-    border-radius: 5px !important;
-    font-size: 1.2vw !important;
-    white-space: nowrap !important;
+.loading {
+    display: flex;
+    align-items: center;
 }
 
-#openChatbotTooltip {
-    display: block !important;
+.loading span {
+    display: inline-block;
+    margin: 0 2px;
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #000;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
 }
 
-#openChatbotTooltip::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: -0.5vw !important; /* Position the arrow */
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    border-width: 0.5vw 0.5vw 0 0.5vw !important;
-    border-style: solid !important;
-    border-color: #333 transparent transparent transparent !important;
+.loading span:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.loading span:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 @media (max-width: 768px) {
-    #openChatbotTooltip {
-        display: none !important;
+    .loading span {
+        width: 2.5vw;
+        height: 2.5vw;
     }
-}
-
-#openChatbot {
-    position: fixed !important;
-    bottom: 2% !important;
-    right: 2% !important;
-    width: 6vw !important; /* Set width based on viewport width */
-    height: 6vw !important; /* Set height equal to width to keep it square */
-    background: #0078d4 !important;
-    border: none !important;
-    cursor: pointer !important;
-    border-radius: 50% !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important; /* 影を強調 */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    transition: transform 0.3s ease, opacity 0.1s ease !important; /* アイコンの拡大 */
-    z-index: 99999 !important;
-}
-
-#openChatbot:hover {
-    transform: scale(1.1) !important; /* ホバー時にアイコンを拡大 */
-}
-
-#openChatbot img {
-    width: 50% !important; /* Adjust based on parent size */
-    height: 50% !important; /* Adjust based on parent size */
-}
-
-@media (max-width: 768px) {
-    #openChatbot {
-        width: 17vw !important; /* Increase width for mobile devices */
-        height: 17vw !important; /* Increase height for mobile devices */
-        bottom: 20% !important;
-        right: 5% !important;
-        z-index: 99999 !important;
-    }
-
-    #openChatbot:hover {
-        transform: none !important; /* スマホ時に拡大しない */
-    }
-
-    #openChatbot img {
-        width: 50% !important; /* Adjust based on parent size */
-        height: 50% !important; /* Adjust based on parent size */
-    }
-    
-    .chatbot-left {
-        font-size: 4vw !important;
-    }
-    
-    #chatbotPhone {
-        font-size: 4vw !important; /* フォントサイズを小さく設定 */
-    }
-    
-    #phoneLink {
-        font-size: 5vw !important; /* リンクのフォントサイズを大きく設定 */
-    }
-    
-}
-
-/* トグルボタンのスタイル */
-.toggle-button {
-    background-color: #ccc !important;
-    border: none !important;
-    color: #fff !important;
-    padding: 10px !important;
-    cursor: pointer !important;
-    border-radius: 20px !important;
-    width: 60px !important;
-    text-align: center !important;
-    transition: background-color 0.3s, transform 0.3s !important;
-    font-size: 1.2vw !important; /* Adjust based on viewport size */
-}
-
-.toggle-button.on {
-    background-color: #4CAF50 !important;
-    transform: scale(1.1) !important; /* Button slightly enlarges when active */
-}
-
-.setting-item {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin-bottom: 10px !important;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .toggle-button {
-        font-size: 4vw !important; /* Adjust for mobile devices */
-    }
-}
-
-#chatbotSettingsContainer {
-    width: 100% !important;
-    background-color: #f0f0f0 !important;
-}
-
-#chatbotSettingsHeader {
-    background: #0078d4 !important;
-    color: white !important;
-    padding: 1% !important;
-    text-align: center !important;
-    cursor: pointer !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-#chatbotSettingsHeader span {
-    font-size: 1.2vw !important; /* Adjust as needed */
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* トグルボタンのスタイル */
-.toggle-button {
-    background-color: #ccc !important;
-    border: none !important;
-    color: #fff !important;
-    padding: 2% !important;
-    cursor: pointer !important;
-    border-radius: 15px !important;
-    width: 18% !important;
-    text-align: center !important;
-    transition: background-color 0.3s, transform 0.3s !important;
-    font-size: 1.2vw !important; /* Adjust based on viewport size */
-}
-
-.toggle-button.on {
-    background-color: #4CAF50 !important;
-    transform: scale(1.1) !important; /* Button slightly enlarges when active */
-}
-
-.setting-item {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin: 1% 0% 1% !important;
-    color: black !important;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .toggle-button {
-        font-size: 4vw !important; /* Adjust for mobile devices */
-    }
-
-    #chatbotSettingsHeader span {
-        font-size: 4vw !important; /* Adjust for mobile devices */
-    }
-}
-
-.toggle-button {
-    background-color: #eb8333 !important;
-}
-
-.hidden {
-    max-height: 0 !important;
-    overflow: hidden !important;
-    transition: max-height 0.5s ease-out !important;
-}
-
-#chatbotSettings {
-    max-height: 0 !important; /* 初期値は0 */
-    overflow: hidden !important;
-    transition: max-height 0.3s ease-in-out !important;
 }
