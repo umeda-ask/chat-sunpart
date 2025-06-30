@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'styles.css';
+    link.href = 'https://umeda-ask.github.io/chat-sunpart/styles.css';
     document.head.appendChild(link);
 
     let chatbotHTML = `
@@ -186,7 +186,7 @@ const chatList = {
     4: {text: '弊所の営業時間は９：００～１７：００です。定休日は土曜日、日曜日、祝日になります。時間外の場合も事前予約で対応いたします。', continue: false, option: 'normal', return: true},
     5: {text: '会社設立、節税対策、確定申告、相続税等のご相談に対応しております。ぜひお気軽にお問い合わせください。', continue: false, option: 'normal', return: true},
     6: {text: '初回相談１時間無料になります。ぜひお気軽にお問い合わせください。', continue: false, option: 'normal', return: true},
-    7: {text: {title: 'お問い合わせ内容を選択してください。', choices: ['法律相談', 'その他']}, continue: false, option: 'choices', return: true},
+    7: {text: {title: 'お問い合わせ内容を選択してください。', choices: ['税務相談', 'その他']}, continue: false, option: 'choices', return: true},
     8: {text: 'お名前を入力して送信ボタンを押してください', continue: false, option: 'normal', return: false},
     9: {text: 'ご住所を入力して送信ボタンを押してください。', continue: false, option: 'normal', return: false},
     10: {text: 'お電話番号を入力して送信ボタンを押してください。', continue: false, option: 'normal', return: false},
@@ -484,7 +484,7 @@ robotOutput();
             user_address: userAddress,
             user_phone: userPhone,
             user_inquiry: userInquiry,
-            professional_email: "keiri-touri@touri-law.com"  // 追加ポイント
+            professional_email: "hirano@sunpart.jp"  // 追加ポイント
         })
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
