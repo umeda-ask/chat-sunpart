@@ -179,6 +179,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     document.body.insertAdjacentHTML('beforeend', chatbotHTML);
 
+    // 強制スタイル上書きで他CSSの影響を排除
+    const chatbot = document.getElementById('chatbot');
+    if (chatbot) {
+        Object.assign(chatbot.style, {
+            position: 'fixed',
+            bottom: '5%',
+            right: '2%',
+            width: '30%',
+            height: '92%',
+            border: '1px solid #ccc',
+            background: '#ffffff',
+            display: 'none',
+            flexDirection: 'column',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            borderRadius: '10px',
+            opacity: '0',
+            transform: 'scale(0)',
+            transformOrigin: 'bottom right',
+            transition: 'opacity 0.1s ease, transform 0.1s ease',
+            zIndex: '99999'
+        });
+    }
+
+    const openBtn = document.getElementById('openChatbot');
+    if (openBtn) {
+        Object.assign(openBtn.style, {
+            position: 'fixed',
+            bottom: '2%',
+            right: '2%',
+            width: '6vw',
+            height: '6vw',
+            background: '#0078d4',
+            border: 'none',
+            cursor: 'pointer',
+            borderRadius: '50%',
+            boxShadow: '0 8px 16px rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            transition: 'transform 0.3s ease, opacity 0.1s ease',
+            zIndex: '99999'
+        });
+    }
+
+
 const chatList = {
     1: {text: '税理士法人サンパートナーズオフィス お問い合わせチャットへようこそ。', continue: true, option: 'normal', return: false},
     2: {text: {title: '以下よりお問い合わせ内容を選んでください。', choices: ['アクセス', '営業時間', '対応業務', '料金', 'お問い合わせ']}, continue: false, option: 'choices', return: true},
