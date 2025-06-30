@@ -25,7 +25,7 @@ let userName = '', userAddress = '', userPhone = '', userInquiry = '';
 
 const link = document.createElement('link');
 link.rel = 'stylesheet';
-link.href = 'styles.css';
+link.href = 'https://umeda-ask.github.io/chat-sunpart/styles.css';
 document.head.appendChild(link);
 
 document.addEventListener('DOMContentLoaded', () => {
