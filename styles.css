@@ -15,7 +15,6 @@
     transform-origin: bottom right;
     transition: opacity 0.1s ease, transform 0.1s ease;
     z-index: 99999;
-    padding: 0;
 }
 
 #chatbot.show {
@@ -165,6 +164,7 @@
     align-items: center;
     transition: transform 0.3s ease, opacity 0.1s ease;
     z-index: 99999;
+    padding: 0;
 }
 
 #openChatbot.hide {
