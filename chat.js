@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
     <button id="openChatbot" title="お問い合わせはこちらから">
-      <img src="https://umeda-ask.github.io/chat-sunpart/chat_open.png" alt="チャットアイコン" style="width:50%; height:50%;">
+      <img src="https://umeda-ask.github.io/chat-sunpart/chat_open.png" alt="チャットアイコン" class="openIcon">
     </button>
   `;
   document.body.insertAdjacentHTML('beforeend', chatbotHTML);
