@@ -106,7 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function robotOutput() {
-        robotCount++;
+        if (robotCount == 0 || robotCount == 1){
+            robotCount++;
+        }
         if (!chatList[robotCount]) return;
 
         const ul = document.getElementById('chatbot-ul');
